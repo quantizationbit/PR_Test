@@ -32,9 +32,12 @@ prores="Lr_5minClip_HDR_UHD2160_240_ProRes4444_rec2020_PQ_1000nits_2398p_Clipste
  
 
 
-
 ## Audio
-ffmpeg -y -i $prores -vn -ac 6 -acodec libfdk_aac -cutoff 18000 -ab 768k audio.aac
+ffmpeg -y -i $prores -vn   \
+       -filter_complex "[0:2][0:3][0:4][0:5][0:6][0:7]amerge=inputs=6[aout]" \
+       -map "[aout]" \
+       -ac 6  -acodec libfdk_aac -cutoff 18000 -ab 768k audio.aac
+
 
 
 
@@ -44,7 +47,7 @@ crf=12
 YUVBASE=YUV
 YUVFILE=$YUVBASE".yuv"
 
-encodeUHD2020PQ
+#encodeUHD2020PQ
 
 MP4Box -v -add x265-$YUVBASE-$crf".bin#0:FMT=HEVC:fps=23.98"   -add "audio.aac:lang=en" -hint -rap  -new x265-$YUVBASE-$crf"-24Hz-cloc2.mp4"
 
