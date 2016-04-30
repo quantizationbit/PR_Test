@@ -25,13 +25,25 @@ ffmpeg -y -i ../$prores \
 
    
 # assume prores is 2020 yuv 444 matrix
-$EDRHOME/Tools/YUV/yuv2tif Direct.yuv B10 2020C
+$EDRHOME/Tools/YUV/yuv2tif Direct.yuv B10 2020
 rm -rfv tif2020
 mv tifXYZ tif2020
 ctlrender -force -ctl $EDRHOME/ACES/CTL/null.ctl \
                  -ctl $EDRHOME/ACES/CTL/VideoRange-2-Full.ctl \
           tif2020/"XpYpZp000002.tif" tif2020/"XpYpZp000002ctl.tif"
 $EDRHOME/Tools/tifcmp/tifcmp $f834 tif2020/XpYpZp000002ctl.tif  B10 -o 127.0 | tee "PSNR_FFMPEG_RTw2020-"$run".txt"
+
+# assume prores is 2020 Constant Luminance yuv 444 matrix
+mkdir tifXYZ
+$EDRHOME/Tools/YUV/yuv2tif Direct.yuv B10 2020C
+rm -rfv tif2020C
+mv tifXYZ tif2020C
+ctlrender -force -ctl $EDRHOME/ACES/CTL/null.ctl \
+                 -ctl $EDRHOME/ACES/CTL/VideoRange-2-Full.ctl \
+          tif2020C/"XpYpZp000002.tif" tif2020C/"XpYpZp000002ctl.tif"
+$EDRHOME/Tools/tifcmp/tifcmp $f834 tif2020C/XpYpZp000002ctl.tif  B10 -o 127.0 | tee "PSNR_FFMPEG_RTw2020C-"$run".txt"
+
+
 
 
 #  try with 709 yuv matrix to see that there is difference
@@ -57,6 +69,10 @@ ctlrender -force -ctl $EDRHOME/ACES/CTLa1/PQ2Linear.ctl $f834 -param1 aIn 1.0 \
 ctlrender -force -ctl $EDRHOME/ACES/CTLa1/PQ2Linear.ctl -param1 aIn 1.0 \
    tif2020/XpYpZp000002ctl.tif \
    -format exr16 F834_2020yuv.exr &
+   
+ctlrender -force -ctl $EDRHOME/ACES/CTLa1/PQ2Linear.ctl -param1 aIn 1.0 \
+   tif2020C/XpYpZp000002ctl.tif \
+   -format exr16 F834_2020Cyuv.exr &   
    
 ctlrender -force -ctl $EDRHOME/ACES/CTLa1/PQ2Linear.ctl -param1 aIn 1.0 \
    tif709/XpYpZp000002ctl.tif \
@@ -106,6 +122,27 @@ gnuplot plot.gp
 convert -alpha off -density 300 \
     $filename".eps" -resize 1440x1080  -quality 90 $filename".jpg"
     
+    
+filename="sc2020Cyuv-"$run".log"
+$EDRHOME/Tools/demos/sc/sigma_compare_PQ Frame834.exr F834_2020Cyuv.exr | tee $filename
+rm -fv *data
+
+
+sed -n -e /"PQ Ave"/p -e /"#10k16b-"/p $filename | sed -n -e /sigma_red/p -e /"#10k16b-"/p | sed s/"#10k16b-".*//g | sed -e s/"pixels, PQ Ave".*//g | sed -e s/"sigma_red".// | sed -e s/"] ="// | sed -e s/"self_relative =".*"(".*" ="// | sed s/" for"// | sed s/"pixels".*//  | tee X.data
+
+sed -n -e /"PQ Ave"/p -e /"#10k16b-"/p $filename | sed -n -e /sigma_grn/p -e /"#10k16b-"/p | sed s/"#10k16b-".*//g | sed -e s/"pixels, PQ Ave".*//g | sed -e s/"sigma_grn".// | sed -e s/"] ="// | sed -e s/"self_relative =".*"(".*" ="// | sed s/" for"// | sed s/"pixels".*//  | tee Y.data
+
+sed -n -e /"PQ Ave"/p -e /"#10k16b-"/p $filename | sed -n -e /sigma_blu/p -e /"#10k16b-"/p | sed s/"#10k16b-".*//g | sed -e s/"pixels, PQ Ave".*//g | sed -e s/"sigma_blu".// | sed -e s/"] ="// | sed -e s/"self_relative =".*"(".*" ="// | sed s/" for"// | sed s/"pixels".*//  | tee Z.data
+
+# remove .log
+export filename="${filename%.log}"
+
+# use -p if want plots to stay up
+gnuplot plot.gp
+
+convert -alpha off -density 300 \
+    $filename".eps" -resize 1440x1080  -quality 90 $filename".jpg"
+        
     
 filename="sc709yuv-"$run".log"
 $EDRHOME/Tools/demos/sc/sigma_compare_PQ Frame834.exr F834_709yuv.exr | tee $filename
