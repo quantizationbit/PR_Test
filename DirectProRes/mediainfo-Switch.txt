@@ -1,0 +1,48 @@
+General
+Complete name                            : ../LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_VideoOnlyTest.mov
+Format                                   : MPEG-4
+Format profile                           : QuickTime
+Codec ID                                 : qt  
+File size                                : 25.6 MiB
+Duration                                 : 250ms
+Overall bit rate                         : 861 Mbps
+Encoded date                             : UTC 2016-04-28 16:04:42
+Tagged date                              : UTC 2016-04-28 16:04:42
+
+Video
+ID                                       : 2
+Format                                   : ap4x
+Codec ID                                 : ap4x
+Duration                                 : 250ms
+Bit rate mode                            : Constant
+Bit rate                                 : 860 Mbps
+Width                                    : 3 840 pixels
+Height                                   : 2 160 pixels
+Display aspect ratio                     : 16:9
+Frame rate mode                          : Constant
+Frame rate                               : 24.000 fps
+Scan type                                : Progressive
+Bits/(Pixel*Frame)                       : 4.322
+Stream size                              : 25.6 MiB (100%)
+Title                                    : Telestream Inc. Telestream Media Framework - Switch 2015.104.167010
+Language                                 : English
+Encoded date                             : UTC 2016-04-28 16:04:42
+Tagged date                              : UTC 2016-04-28 16:04:42
+Color primaries                          : BT.2020
+Transfer characteristics                 : BT.2020
+Matrix coefficients                      : BT.2020 non-constant
+
+Other
+ID                                       : 1
+Type                                     : Time code
+Format                                   : QuickTime TC
+Duration                                 : 250ms
+Time code of first frame                 : 03:00:42:18
+Time code, striped                       : Yes
+Title                                    : Telestream Inc. Telestream Media Framework - Switch 2015.104.167010
+Language                                 : English
+Encoded date                             : UTC 2016-04-28 16:04:42
+Tagged date                              : UTC 2016-04-28 16:04:42
+Bit rate mode                            : CBR
+
+

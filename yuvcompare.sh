@@ -3,6 +3,9 @@
 
 function FRAMETEST {
 
+mediainfo ../$prores | tee "mediainfo-"$run".txt"
+ffmpeg -i ../$prores  2>&1 | tee "ffmpeg-info-"$run".txt"
+
 export CTL_MODULE_PATH="/usr/local/lib/CTL:$EDRHOME/ACES/CTL:$EDRHOME/ACES/transforms/ctl/utilities"
 
 # Dump frame
@@ -236,11 +239,18 @@ convert -alpha off -density 300 \
 
 set -x
 
+rm -fv *jpg *eps *txt *log 
 
+proresQT="universaltest_ls_24fps_2020PQ.mov"
 proresGIC="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_2398p_GIC_VideoOnly_Test.mov"
 proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_VideoOnlyTest.mov"
 proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_VideoOnlyTest.mov"
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
+
+prores=$proresQT
+run="QT"
+FRAMETEST
+
 
 
 prores=$proresFA

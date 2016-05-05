@@ -1,0 +1,35 @@
+General
+Complete name                            : ../universaltest_ls_24fps_2020PQ.mov
+Format                                   : MPEG-4
+Format profile                           : QuickTime
+Codec ID                                 : qt  
+File size                                : 46.6 MiB
+Duration                                 : 458ms
+Overall bit rate mode                    : Constant
+Overall bit rate                         : 854 Mbps
+Encoded date                             : UTC 2016-05-04 23:38:05
+Tagged date                              : UTC 2016-05-04 23:38:06
+Writing library                          : Apple QuickTime
+
+Video
+ID                                       : 1
+Format                                   : ap4x
+Codec ID                                 : ap4x
+Duration                                 : 458ms
+Bit rate mode                            : Constant
+Bit rate                                 : 853 Mbps
+Width                                    : 3 840 pixels
+Height                                   : 2 160 pixels
+Display aspect ratio                     : 16:9
+Frame rate mode                          : Constant
+Frame rate                               : 24.000 fps
+Scan type                                : Progressive
+Bits/(Pixel*Frame)                       : 4.286
+Stream size                              : 46.6 MiB (100%)
+Title                                    : Core Media Video
+Encoded date                             : UTC 2016-05-04 23:38:05
+Tagged date                              : UTC 2016-05-04 23:38:06
+Color primaries                          : BT.2020
+Matrix coefficients                      : BT.2020 non-constant
+
+
