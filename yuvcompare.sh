@@ -242,7 +242,7 @@ set -x
 rm -fv *jpg *eps *txt *log 
 
 proresQT2="universaltest4444.mov"
-proresGIC2="LS_ProRes4444XQ_GIC_20160505.mov"
+proresGIC2="LS_ProRes4444XQ_GIC_20160506.mov"
 proresQT="universaltest_ls_24fps_2020PQ.mov"
 proresGIC="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_2398p_GIC_VideoOnly_Test.mov"
 proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_VideoOnlyTest.mov"

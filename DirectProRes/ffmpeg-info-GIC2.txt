@@ -10,23 +10,23 @@ ffmpeg version 3.0.1 Copyright (c) 2000-2016 the FFmpeg developers
   libswscale      4.  0.100 /  4.  0.100
   libswresample   2.  0.101 /  2.  0.101
   libpostproc    54.  0.100 / 54.  0.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '../LS_ProRes4444XQ_GIC_20160505.mov':
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '../LS_ProRes4444XQ_GIC_20160506.mov':
   Metadata:
     major_brand     : qt  
     minor_version   : 537199360
     compatible_brands: qt  
-    creation_time   : 2016-05-05 17:14:21
+    creation_time   : 2016-05-06 10:47:17
     encoder         : DVP Factory r363 (2016-04-08), Host: dvp6
-  Duration: 00:00:00.42, start: 0.000000, bitrate: 833293 kb/s
-    Stream #0:0(eng): Video: prores (ap4x / 0x78347061), yuv444p10le, 3840x2160, 833187 kb/s, SAR 1:1 DAR 16:9, 23.98 fps, 23.98 tbr, 24k tbn, 24k tbc (default)
+  Duration: 00:00:00.42, start: 0.000000, bitrate: 852336 kb/s
+    Stream #0:0(eng): Video: prores (ap4x / 0x78347061), yuv444p10le, 3840x2160, 852229 kb/s, SAR 1:1 DAR 16:9, 23.98 fps, 23.98 tbr, 24k tbn, 24k tbc (default)
     Metadata:
-      creation_time   : 2016-05-05 17:14:21
+      creation_time   : 2016-05-06 10:47:17
       handler_name    : DataHandler
       encoder         : Apple ProRes 4444 XQ
-      timecode        : 00:00:00:00
+      timecode        : 00:57:50:00
     Stream #0:1(eng): Data: none (tmcd / 0x64636D74), 0 kb/s (default)
     Metadata:
-      creation_time   : 2016-05-05 17:14:21
+      creation_time   : 2016-05-06 10:47:17
       handler_name    : DataHandler
-      timecode        : 00:00:00:00
+      timecode        : 00:57:50:00
 At least one output file must be specified
