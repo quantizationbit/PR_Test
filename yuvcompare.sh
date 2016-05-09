@@ -4,14 +4,14 @@
 function FRAMETEST {
 
 mediainfo ../$prores | tee "mediainfo-"$run".txt"
-ffmpeg -i ../$prores  2>&1 | tee "ffmpeg-info-"$run".txt"
+ffmpeg -vcodec prores -i ../$prores  2>&1 | tee "ffmpeg-info-"$run".txt"
 
 export CTL_MODULE_PATH="/usr/local/lib/CTL:$EDRHOME/ACES/CTL:$EDRHOME/ACES/transforms/ctl/utilities"
 
 # Dump frame
 rm -rfv tifRGB444
 mkdir tifRGB444
-ffmpeg -y -i ../$prores \
+ffmpeg -y -vcodec prores -i ../$prores \
    -an  -vcodec tiff tifRGB444/%06d.tif
    
 ctlrender -force -ctl $EDRHOME/ACES/CTL/null.ctl \
@@ -23,7 +23,7 @@ $EDRHOME/Tools/tifcmp/tifcmp $f834 tifRGB444/"000002ctl.tif"  B10 -o 127.0 | tee
 rm -rfv tifXYZ
 mkdir tifXYZ
 rm Direct.yuv
-ffmpeg -y -i ../$prores \
+ffmpeg -y -vcodec prores -i ../$prores \
    -an  -pix_fmt yuv420p10le  -f rawvideo -vcodec rawvideo  Direct.yuv
 
    
@@ -242,20 +242,21 @@ set -x
 rm -fv *jpg *eps *txt *log 
 
 proresQT2="universaltest4444.mov"
-proresGIC2="LS_ProRes4444XQ_GIC_20160506.mov"
+proresGIC2="LS_ProRes4444XQ_GIC_20160507.mov"
 proresQT="universaltest_ls_24fps_2020PQ.mov"
 proresGIC="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_2398p_GIC_VideoOnly_Test.mov"
 proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_VideoOnlyTest.mov"
 proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_VideoOnlyTest.mov"
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
 
-prores=$proresQT2
-run="QT2"
-FRAMETEST
-
 
 prores=$proresGIC2
 run="GIC2"
+FRAMETEST
+
+
+prores=$proresQT2
+run="QT2"
 FRAMETEST
 
 
