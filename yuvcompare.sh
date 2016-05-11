@@ -148,6 +148,7 @@ convert -alpha off -density 300 \
         
     
 filename="sc709yuv-"$run".log"
+
 $EDRHOME/Tools/demos/sc/sigma_compare_PQ Frame834.exr F834_709yuv.exr | tee $filename
 rm -fv *data
 
@@ -241,6 +242,7 @@ set -x
 
 rm -fv *jpg *eps *txt *log 
 
+proresCSR="billPQProTestFULL-NoClipFlatPass2_5frames.mov"
 proresQT2="universaltest4444.mov"
 proresGIC2="LS_ProRes4444XQ_GIC_20160507.mov"
 proresGIC3="LS_ProRes4444XQ_GIC3_20160510.mov"
@@ -252,6 +254,12 @@ proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_Video
 proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_VideoOnlyTest.mov"
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
 
+
+prores=$proresCSR
+run="CSR"
+FRAMETEST
+
+exit
 
 prores=$proresCAPR
 run="CAPR"
@@ -267,7 +275,6 @@ prores=$proresGIC3
 run="GIC3"
 FRAMETEST
 
-exit
 
 prores=$proresGIC2
 run="GIC2"
