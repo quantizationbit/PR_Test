@@ -1,0 +1,14 @@
+
+ Processing 10 bit data
+Gain=1
+Offset=127
+Max differences: R' -40, G' 8, B' 25
+Writing Compare.tif
+MSE G = 1.054904    PSNR (dB) = 59.973869 
+MSE R= 3.540472    PSNR (dB) = 54.715387 
+MSE B= 7.250940    PSNR (dB) = 51.602056 
+MSE Distance= 11.846316    PSNR (dB) = 49.470166 
+MSE Color (R,B -> R,B) Distance= 10.791412    PSNR (dB) = 49.875217 
+
+Completeddoublefull.tif
+
