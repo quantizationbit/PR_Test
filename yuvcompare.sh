@@ -242,6 +242,10 @@ set -x
 
 rm -fv *jpg *eps *txt *log 
 
+proresCT2444="LS_10frames_HDR_3840x2160_ProRes4444_rec2020_PQ_1000nit_FullRange_MTIcortex_tiff-to-proresTEST_v2.mov"
+proresCT2422="LS_10frames_HDR_3840x2160_ProRes422HQ_rec2020_PQ_1000nit_FullRange_MTIcortex_tiff-to-proresTEST_v2.mov"
+proresCT1444="LS_10frames_HDR_3840x2160_ProRes4444_rec2020_PQ_1000nit_FullRange_MTIcortex_tiff-to-proresTEST.mov"
+proresCT1422="LS_10frames_HDR_3840x2160_ProRes422HQ_rec2020_PQ_1000nit_FullRange_MTIcortex_tiff-to-proresTEST.mov"
 proresGICPR="LS_ProRes422HQ_GIC_20160511.mov"
 proresCSR="billPQProTestFULL-NoClipFlatPass2_5frames.mov"
 proresQT2="universaltest4444.mov"
@@ -254,6 +258,34 @@ proresGIC="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_2398p_GIC_VideoOnly_T
 proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_VideoOnlyTest.mov"
 proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_VideoOnlyTest.mov"
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
+
+
+# second run
+prores=$proresCT2444
+run="CT2444"
+FRAMETEST
+
+prores=$proresCT2422
+run="CT2422"
+FRAMETEST
+
+
+# first run
+f834="doublefull.tif"
+
+prores=$proresCT1444
+run="CT1444"
+FRAMETEST
+
+prores=$proresCT1422
+run="CT1422"
+FRAMETEST
+
+
+f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
+
+
+
 
 
 prores=$proresGICPR
