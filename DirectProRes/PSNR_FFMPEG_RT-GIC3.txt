@@ -2,13 +2,13 @@
  Processing 10 bit data
 Gain=1
 Offset=127
-Max differences: X' 11, Y' -11, Z' 19
+Max differences: R' 9, G' -10, B' 11
 Writing Compare.tif
-MSE G = 7.917040    PSNR (dB) = 51.220371 
-MSE R= 2.636542    PSNR (dB) = 55.995653 
-MSE B= 8.259762    PSNR (dB) = 51.036324 
-MSE Distance= 18.813343    PSNR (dB) = 47.461339 
-MSE Color (R,B -> R,B) Distance= 10.896303    PSNR (dB) = 49.833207 
+MSE G = 7.894375    PSNR (dB) = 51.232821 
+MSE R= 2.479147    PSNR (dB) = 56.262976 
+MSE B= 7.231204    PSNR (dB) = 51.613893 
+MSE Distance= 17.604726    PSNR (dB) = 47.749706 
+MSE Color (R,B -> R,B) Distance= 9.710351    PSNR (dB) = 50.333650 
 
 CompletedLS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff
 

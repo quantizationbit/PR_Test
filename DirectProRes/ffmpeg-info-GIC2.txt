@@ -1,15 +1,15 @@
-ffmpeg version 2.4.3 Copyright (c) 2000-2014 the FFmpeg developers
-  built on May 24 2015 06:24:57 with gcc 4.9.2 (GCC)
-  configuration: --prefix=/usr --libdir=/usr/lib64 --shlibdir=/usr/lib64 --docdir=/usr/doc/ffmpeg-2.4.3 --mandir=/usr/man --enable-libmp3lame --enable-libfaac --enable-libvo-aacenc --enable-libfdk-aac --enable-nonfree --enable-gpl --enable-version3 --enable-avfilter --enable-avresample --enable-libass --enable-libdc1394 --enable-libgsm --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopus --enable-libschroedinger --enable-libspeex --enable-libtheora --enable-libv4l2 --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-postproc --enable-runtime-cpudetect --enable-vaapi --enable-vdpau --enable-memalign-hack --enable-pthreads --enable-x11grab --enable-bzlib --enable-zlib --enable-shared --enable-static --disable-debug --arch=x86_64 --enable-pic --extra-cflags='-I/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/include -DRUNTIME_CPUDETECT' --extra-ldflags='-L/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/lib64 -ldl -lssl -lcrypto -lz -lusb' --pkg-config-flags=--static
-  libavutil      54.  7.100 / 54.  7.100
-  libavcodec     56.  1.100 / 56.  1.100
-  libavformat    56.  4.101 / 56.  4.101
-  libavdevice    56.  0.100 / 56.  0.100
-  libavfilter     5.  1.100 /  5.  1.100
-  libavresample   2.  1.  0 /  2.  1.  0
-  libswscale      3.  0.100 /  3.  0.100
-  libswresample   1.  1.100 /  1.  1.100
-  libpostproc    53.  0.100 / 53.  0.100
+ffmpeg version 3.0.1 Copyright (c) 2000-2016 the FFmpeg developers
+  built with gcc 5.3.0 (GCC)
+  configuration: --prefix=/usr --libdir=/usr/lib64 --shlibdir=/usr/lib64 --docdir=/usr/doc/ffmpeg-3.0.1 --mandir=/usr/man --enable-gpl --enable-version3 --enable-avfilter --enable-avresample --enable-libass --enable-libdc1394 --enable-libgsm --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopus --enable-libschroedinger --enable-libspeex --enable-libtheora --enable-libv4l2 --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-postproc --enable-runtime-cpudetect --enable-vaapi --enable-vdpau --enable-memalign-hack --enable-pthreads --enable-x11grab --enable-bzlib --enable-zlib --enable-shared --enable-static --disable-debug --enable-libmp3lame --enable-libfaac --enable-libfdk-aac --enable-openssl --enable-nonfree --arch=x86_64 --enable-pic --extra-cflags='-I/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/include -I/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/include/SDL -DRUNTIME_CPUDETECT' --extra-ldflags='-L/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/lib64 -ldl -lssl -lcrypto -lz -lusb' --pkg-config-flags=--static
+  libavutil      55. 17.103 / 55. 17.103
+  libavcodec     57. 24.102 / 57. 24.102
+  libavformat    57. 25.100 / 57. 25.100
+  libavdevice    57.  0.101 / 57.  0.101
+  libavfilter     6. 31.100 /  6. 31.100
+  libavresample   3.  0.  0 /  3.  0.  0
+  libswscale      4.  0.100 /  4.  0.100
+  libswresample   2.  0.101 /  2.  0.101
+  libpostproc    54.  0.100 / 54.  0.100
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '../LS_ProRes4444XQ_GIC_20160507.mov':
   Metadata:
     major_brand     : qt  
@@ -17,78 +17,6 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '../LS_ProRes4444XQ_GIC_20160507.mov':
     compatible_brands: qt  
     creation_time   : 2016-05-07 11:27:28
     encoder         : DVP Factory r363 (2016-04-08), Host: dvp6
-    xmp             : <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-                    : <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.3-c011 66.145661, 2012/02/06-14:56:27        ">
-                    :  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-                    :   <rdf:Description rdf:about=""
-                    :     xmlns:xmp="http://ns.adobe.com/xap/1.0/"
-                    :     xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/"
-                    :     xmlns:stDim="http://ns.adobe.com/xap/1.0/sType/Dimensions#"
-                    :     xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
-                    :     xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
-                    :    xmp:CreateDate="2016-05-07T11:27:28Z"
-                    :    xmp:ModifyDate="2016-05-07T17:55:33+08:00"
-                    :    xmp:MetadataDate="2016-05-07T17:55:37+08:00"
-                    :    xmpDM:startTimeScale="24000"
-                    :    xmpDM:startTimeSampleSize="1001"
-                    :    xmpDM:videoPixelAspectRatio="1/1"
-                    :    xmpDM:videoFieldOrder="Progressive"
-                    :    xmpDM:videoAlphaMode="none"
-                    :    xmpDM:videoFrameRate="23.976024"
-                    :    xmpMM:InstanceID="xmp.iid:03801174072068118C14BA161F2786B5"
-                    :    xmpMM:DocumentID="xmp.did:01801174072068118C14BA161F2786B5"
-                    :    xmpMM:OriginalDocumentID="xmp.did:01801174072068118C14BA161F2786B5">
-                    :    <xmpDM:duration
-                    :     xmpDM:value="10010"
-                    :     xmpDM:scale="1/24000"/>
-                    :    <xmpDM:altTimecode
-                    :     xmpDM:timeValue="00:57:50:00"
-                    :     xmpDM:timeFormat="23976Timecode"/>
-                    :    <xmpDM:videoFrameSize
-                    :     stDim:w="3840"
-                    :     stDim:h="2160"
-                    :     stDim:unit="pixel"/>
-                    :    <xmpMM:History>
-                    :     <rdf:Seq>
-                    :      <rdf:li
-                    :       stEvt:action="saved"
-                    :       stEvt:instanceID="xmp.iid:02801174072068118C14BA161F2786B5"
-                    :       stEvt:when="2016-05-07T17:55:33+08:00"
-                    :       stEvt:softwareAgent="Adobe Premiere Pro CS6 (Macintosh)"
-                    :       stEvt:changed="/"/>
-                    :      <rdf:li
-                    :       stEvt:action="saved"
-                    :       stEvt:instanceID="xmp.iid:03801174072068118C14BA161F2786B5"
-                    :       stEvt:when="2016-05-07T17:55:37+08:00"
-                    :       stEvt:softwareAgent="Adobe Premiere Pro CS6 (Macintosh)"
-                    :       stEvt:changed="/metadata"/>
-                    :     </rdf:Seq>
-                    :    </xmpMM:History>
-                    :   </rdf:Description>
-                    :  </rdf:RDF>
-                    : </x:xmpmeta>
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                                                                                                     
-                    :                            
-                    : <?xpacket end="w"?>
   Duration: 00:00:00.42, start: 0.000000, bitrate: 847401 kb/s
     Stream #0:0(eng): Video: prores (ap4x / 0x78347061), yuv444p10le, 3840x2160, 847295 kb/s, SAR 1:1 DAR 16:9, 23.98 fps, 23.98 tbr, 24k tbn, 24k tbc (default)
     Metadata:

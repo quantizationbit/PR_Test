@@ -1,15 +1,15 @@
-ffmpeg version 2.4.3 Copyright (c) 2000-2014 the FFmpeg developers
-  built on May 24 2015 06:24:57 with gcc 4.9.2 (GCC)
-  configuration: --prefix=/usr --libdir=/usr/lib64 --shlibdir=/usr/lib64 --docdir=/usr/doc/ffmpeg-2.4.3 --mandir=/usr/man --enable-libmp3lame --enable-libfaac --enable-libvo-aacenc --enable-libfdk-aac --enable-nonfree --enable-gpl --enable-version3 --enable-avfilter --enable-avresample --enable-libass --enable-libdc1394 --enable-libgsm --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopus --enable-libschroedinger --enable-libspeex --enable-libtheora --enable-libv4l2 --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-postproc --enable-runtime-cpudetect --enable-vaapi --enable-vdpau --enable-memalign-hack --enable-pthreads --enable-x11grab --enable-bzlib --enable-zlib --enable-shared --enable-static --disable-debug --arch=x86_64 --enable-pic --extra-cflags='-I/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/include -DRUNTIME_CPUDETECT' --extra-ldflags='-L/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/lib64 -ldl -lssl -lcrypto -lz -lusb' --pkg-config-flags=--static
-  libavutil      54.  7.100 / 54.  7.100
-  libavcodec     56.  1.100 / 56.  1.100
-  libavformat    56.  4.101 / 56.  4.101
-  libavdevice    56.  0.100 / 56.  0.100
-  libavfilter     5.  1.100 /  5.  1.100
-  libavresample   2.  1.  0 /  2.  1.  0
-  libswscale      3.  0.100 /  3.  0.100
-  libswresample   1.  1.100 /  1.  1.100
-  libpostproc    53.  0.100 / 53.  0.100
+ffmpeg version 3.0.1 Copyright (c) 2000-2016 the FFmpeg developers
+  built with gcc 5.3.0 (GCC)
+  configuration: --prefix=/usr --libdir=/usr/lib64 --shlibdir=/usr/lib64 --docdir=/usr/doc/ffmpeg-3.0.1 --mandir=/usr/man --enable-gpl --enable-version3 --enable-avfilter --enable-avresample --enable-libass --enable-libdc1394 --enable-libgsm --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopus --enable-libschroedinger --enable-libspeex --enable-libtheora --enable-libv4l2 --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-postproc --enable-runtime-cpudetect --enable-vaapi --enable-vdpau --enable-memalign-hack --enable-pthreads --enable-x11grab --enable-bzlib --enable-zlib --enable-shared --enable-static --disable-debug --enable-libmp3lame --enable-libfaac --enable-libfdk-aac --enable-openssl --enable-nonfree --arch=x86_64 --enable-pic --extra-cflags='-I/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/include -I/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/include/SDL -DRUNTIME_CPUDETECT' --extra-ldflags='-L/tmp/build/tmp-ffmpeg/ffmpegdeps/usr/lib64 -ldl -lssl -lcrypto -lz -lusb' --pkg-config-flags=--static
+  libavutil      55. 17.103 / 55. 17.103
+  libavcodec     57. 24.102 / 57. 24.102
+  libavformat    57. 25.100 / 57. 25.100
+  libavdevice    57.  0.101 / 57.  0.101
+  libavfilter     6. 31.100 /  6. 31.100
+  libavresample   3.  0.  0 /  3.  0.  0
+  libswscale      4.  0.100 /  4.  0.100
+  libswresample   2.  0.101 /  2.  0.101
+  libpostproc    54.  0.100 / 54.  0.100
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '../LS_10frames_HDR_3840x2160_ProRes4444_rec2020_PQ_1000nit_FullRange_MTIcortex_tiff-to-proresTEST_v2.mov':
   Metadata:
     major_brand     : qt  

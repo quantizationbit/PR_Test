@@ -292,7 +292,6 @@ prores=$proresGICPR
 run="GICPR"
 FRAMETEST
 
-exit
 
 prores=$proresCSR
 run="CSR"

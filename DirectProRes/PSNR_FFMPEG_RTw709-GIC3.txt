@@ -2,7 +2,7 @@
  Processing 10 bit data
 Gain=1
 Offset=127
-Max differences: X' -9, Y' -9, Z' 24
+Max differences: R' -9, G' -9, B' 24
 Writing Compare.tif
 MSE G = 2.118915    PSNR (dB) = 56.944864 
 MSE R= 2.632457    PSNR (dB) = 56.002387 
