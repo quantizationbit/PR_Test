@@ -242,6 +242,7 @@ set -x
 
 rm -fv *jpg *eps *txt *log 
 
+proresCT2444fix2="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_VideoOnly_Cortex_v303b10305_Test.mov"
 proresCT2444fix="LoneSurvivor_10frames_UHD_3840x2160_rec2020_PQ_1000nit_ProRes4444_24p_MTIcortex_VideoOnlyTest.mov"
 proresCT2444="LS_10frames_HDR_3840x2160_ProRes4444_rec2020_PQ_1000nit_FullRange_MTIcortex_tiff-to-proresTEST_v2.mov"
 proresCT2422="LS_10frames_HDR_3840x2160_ProRes422HQ_rec2020_PQ_1000nit_FullRange_MTIcortex_tiff-to-proresTEST_v2.mov"
@@ -259,6 +260,12 @@ proresGIC="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_2398p_GIC_VideoOnly_T
 proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_VideoOnlyTest.mov"
 proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_VideoOnlyTest.mov"
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
+
+# fourth run
+prores=$proresCT2444fix2
+run="CT2444fix2"
+FRAMETEST
+
 
 # third run
 prores=$proresCT2444fix
