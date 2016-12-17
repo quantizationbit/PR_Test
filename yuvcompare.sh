@@ -250,6 +250,9 @@ git tag
 git checkout v1.0.1
 popd
 
+
+proresCTFR2="LoneSurvivor_10frames_HDR_UHD_rec2020_PQ_1000nit_FullRange_ProRes4444_YUV_24p_to_ProRes4444_YUV_2398p.mov"
+proresCTfix3="LoneSurvivor_10frames_HDR_UHD_rec2020_PQ_1000nit_FullRange_16bit_214p_TIFF_to_ProRes4444_YUV_2398p.mov"
 proresCTFR="LoneSurvivor_10frames_HDR_TIFF_24p_to_ProRes4444_2398p_Cortex313b_Test.mov"
 proresRS444="LoneSurvivor_Resolve_ProRes4444_FullRange_PQ-2020_.mov"
 proresRSHQ="LoneSurvivor_Resolve_ProResHQ_FullRange_PQ-2020.mov"
@@ -272,6 +275,26 @@ proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_Video
 proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_VideoOnlyTest.mov"
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
 #f834="LoneSurvivor_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0265924.tiff"
+
+#Cortex 24 to 2398 framerate
+prores=$proresCTFR
+run="CTFR"
+FRAMETEST
+
+
+#Cortex 24 to 2398 framerate
+prores=$proresCTFR2
+run="CTFR2"
+FRAMETEST
+
+#Cortex tiff to prores create
+prores=$proresCTfix3
+run="CTfix3"
+FRAMETEST
+
+exit
+
+
 
 
 #Cortex 24 to 2398 framerate
