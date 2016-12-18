@@ -1,30 +1,32 @@
 
+FFMPEG="$EDRHOME/src/ffmpeg/ffmpeg-git-20161217-64bit-static/ffmpeg-10bit"
+
+
 
 
 function FRAMETEST {
 
 mediainfo ../$prores | tee "mediainfo-"$run".txt"
-ffmpeg -vcodec prores -i ../$prores  2>&1 | tee "ffmpeg-info-"$run".txt"
+$FFMPEG -vcodec prores -i ../$prores  2>&1 | tee "ffmpeg-info-"$run".txt"
 
 export CTL_MODULE_PATH="/usr/local/lib/CTL:$EDRHOME/ACES/CTL:$EDRHOME/ACES/transforms/ctl/utilities"
-
 
 # Dump frame
 rm -rfv tifRGB444
 mkdir tifRGB444
-ffmpeg -y -vcodec prores -i ../$prores \
+$FFMPEG -y -vcodec prores -i ../$prores \
    -an  -vcodec tiff tifRGB444/%06d.tif
    
 ctlrender -force -ctl $EDRHOME/ACES/CTL/null.ctl \
           tifRGB444/"000002.tif" tifRGB444/"000002ctl.tif"    
 $EDRHOME/Tools/tifcmp/tifcmp $f834 tifRGB444/"000002ctl.tif"  B10 -o 127.0 | tee "PSNR_FFMPEG_RT-"$run".txt"
-
+mv Compare.tif "Compare_PSNR_FFMPEG_RT-"$run".tif"
 
 # Dump a 420 using ffmpeg (assuming only subsampling is occuring)
 rm -rfv tifXYZ
 mkdir tifXYZ
 rm Direct.yuv
-ffmpeg -y -vcodec prores -i ../$prores \
+$FFMPEG -y -vcodec prores -i ../$prores \
    -an  -pix_fmt yuv420p10le  -f rawvideo -vcodec rawvideo  Direct.yuv
 
    
@@ -36,6 +38,7 @@ ctlrender -force -ctl $EDRHOME/ACES/CTL/null.ctl \
                  -ctl $EDRHOME/ACES/CTL/VideoRange-2-Full.ctl \
           tif2020/"XpYpZp000002.tif" tif2020/"XpYpZp000002ctl.tif"
 $EDRHOME/Tools/tifcmp/tifcmp $f834 tif2020/XpYpZp000002ctl.tif  B10 -o 127.0 | tee "PSNR_FFMPEG_RTw2020-"$run".txt"
+mv Compare.tif "Compare_PSNR_FFMPEG_RTw2020-"$run".tif"
 
 # assume prores is 2020 Constant Luminance yuv 444 matrix
 mkdir tifXYZ
@@ -46,6 +49,7 @@ ctlrender -force -ctl $EDRHOME/ACES/CTL/null.ctl \
                  -ctl $EDRHOME/ACES/CTL/VideoRange-2-Full.ctl \
           tif2020C/"XpYpZp000002.tif" tif2020C/"XpYpZp000002ctl.tif"
 $EDRHOME/Tools/tifcmp/tifcmp $f834 tif2020C/XpYpZp000002ctl.tif  B10 -o 127.0 | tee "PSNR_FFMPEG_RTw2020C-"$run".txt"
+mv Compare.tif "Compare_PSNR_FFMPEG_RTw2020C-"$run".tif"
 
 
 
@@ -59,6 +63,7 @@ ctlrender -force -ctl $EDRHOME/ACES/CTL/null.ctl \
                  -ctl $EDRHOME/ACES/CTL/VideoRange-2-Full.ctl \
           tif709/"XpYpZp000002.tif" tif709/"XpYpZp000002ctl.tif"
 $EDRHOME/Tools/tifcmp/tifcmp $f834 tif709/XpYpZp000002ctl.tif  B10 -o 127.0 | tee "PSNR_FFMPEG_RTw709-"$run".txt"
+mv Compare.tif "Compare_PSNR_FFMPEG_RTw709-"$run".tif"
 
 
 
@@ -276,10 +281,6 @@ proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_Vi
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
 #f834="LoneSurvivor_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0265924.tiff"
 
-#Cortex 24 to 2398 framerate
-prores=$proresCTFR
-run="CTFR"
-FRAMETEST
 
 
 #Cortex 24 to 2398 framerate
@@ -294,6 +295,10 @@ FRAMETEST
 
 exit
 
+#Cortex 24 to 2398 framerate
+prores=$proresCTFR
+run="CTFR"
+FRAMETEST
 
 
 
