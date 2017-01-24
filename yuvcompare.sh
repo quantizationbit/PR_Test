@@ -1,5 +1,5 @@
 
-FFMPEG="$EDRHOME/src/ffmpeg/ffmpeg-git-20161217-64bit-static/ffmpeg-10bit"
+FFMPEG="/home/qbit/Documents/EDR/src/ffmpeg-static/ffmpeg-10bit"
 
 
 
@@ -69,7 +69,7 @@ mv Compare.tif "Compare_PSNR_FFMPEG_RTw709-"$run".tif"
 
 
 # Sigma compare:
-export CTL_MODULE_PATH="$EDRHOME/ACES/aces-dev/transforms/ctl/utilities:$EDRHOME/ACES/CTLa1"
+CTL_MODULE_PATH="$EDRHOME/ACES/CTLa1:$EDRHOME/ACES/aces-dev/transforms/ctl/utilities:$EDRHOME/ACES/aces-dev/transforms/ctl/lib"
 rm -fv *exr
 
 ctlrender -force -ctl $EDRHOME/ACES/CTLa1/PQ2Linear.ctl $f834 -param1 aIn 1.0 \
@@ -252,10 +252,19 @@ rm -fv *jpg *eps *txt *log
 pushd .
 cd $EDRHOME/ACES/aces-dev
 git tag
-git checkout v1.0.1
+git checkout v1.0.3
+git status
 popd
 
 
+# Jan 19 2017
+proresCT24to2398="LSJan19_2017/LS_HDR_UHD_rec2020_PQ_1000nit_ProRes4444_YUV_24p_to_Prores444_YUV__2398p_Cortex313_b11135.mov"
+proresCTtiff24to2398="LSJan19_2017/LS_HDR_UHD_rec2020_PQ_1000nit_TIFF_24p_to_ProRes4444_YUV_2398p_Cortex313_b11135.mov"
+proresCTtiff24to24="LSJan19_2017/LS_HDR_UHD_rec2020_PQ_1000nit_TIFF_24p_to_ProRes4444_YUV_24p_Cortex313_b11135.mov"
+
+
+
+# 2016 tests
 proresCTFR2="LoneSurvivor_10frames_HDR_UHD_rec2020_PQ_1000nit_FullRange_ProRes4444_YUV_24p_to_ProRes4444_YUV_2398p.mov"
 proresCTfix3="LoneSurvivor_10frames_HDR_UHD_rec2020_PQ_1000nit_FullRange_16bit_214p_TIFF_to_ProRes4444_YUV_2398p.mov"
 proresCTFR="LoneSurvivor_10frames_HDR_TIFF_24p_to_ProRes4444_2398p_Cortex313b_Test.mov"
@@ -278,11 +287,44 @@ proresQT="universaltest_ls_24fps_2020PQ.mov"
 proresGIC="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_2398p_GIC_VideoOnly_Test.mov"
 proresSwitch="LS_5frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_Switch162_VideoOnlyTest.mov"
 proresFA="LS_10frames_HDR_rec2020_PQ_1000nit_ProRes4444XQ_24p_FlameAssist2106_VideoOnlyTest.mov"
+
+# Source reference frame
 f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.tiff"
 #f834="LoneSurvivor_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0265924.tiff"
 
 
+#######
+#
+# Tests
+# run from inside DirectProRes/ folder
+# $ ../yuvcompare.sh
+#
+#######
 
+# Jan 19 2017
+
+#Cortex 24p to 2398 rate change
+prores=$proresCT24to2398
+run="CT24to2398"
+FRAMETEST
+
+#Cortex tiff24p to 2398 creation
+prores=$proresCTtiff24to2398
+run="CTtiff24to2398"
+FRAMETEST
+
+#Cortex tiff24p to 24 creation
+prores=$proresCTtiff24to24
+run="CTtiff24to24"
+FRAMETEST
+
+exit
+
+
+
+
+
+## 2016 tests
 #Cortex 24 to 2398 framerate
 prores=$proresCTFR2
 run="CTFR2"
