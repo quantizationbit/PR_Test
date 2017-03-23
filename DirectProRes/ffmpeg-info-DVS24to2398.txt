@@ -1,0 +1,28 @@
+ffmpeg version N-83182-gcde007dcd3-static http://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2017 the FFmpeg developers
+  built with gcc 5.4.1 (Debian 5.4.1-4) 20161202
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-debug --disable-ffplay --disable-indev=sndio --disable-outdev=sndio --cc=gcc-5 --enable-fontconfig --enable-frei0r --enable-gnutls --enable-gray --enable-libass --enable-libfreetype --enable-libfribidi --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libzimg
+  libavutil      55. 43.100 / 55. 43.100
+  libavcodec     57. 75.100 / 57. 75.100
+  libavformat    57. 62.100 / 57. 62.100
+  libavdevice    57.  2.100 / 57.  2.100
+  libavfilter     6. 69.100 /  6. 69.100
+  libswscale      4.  3.101 /  4.  3.101
+  libswresample   2.  4.100 /  2.  4.100
+  libpostproc    54.  2.100 / 54.  2.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '../DVSClipsterv6.2.0.2-Beta/LoneSurvivor_10frames_HDR_UHD_ProRes4444_24p_to_ProRes4444_2398p_Clipster_v6.2.0.2b_Test.mov':
+  Metadata:
+    creation_time   : 2017-02-28T20:01:30.000000Z
+    timecode        : 01:00:00:00
+  Duration: 00:00:00.42, start: 0.000000, bitrate: 674006 kb/s
+    Stream #0:0(eng): Video: prores (ap4h / 0x68347061), yuva444p10le(bt2020nc/bt2020/smpte2084, progressive), 3840x2160, 672599 kb/s, SAR 1:1 DAR 16:9, 23.98 fps, 23.98 tbr, 24k tbn, 24k tbc (default)
+    Metadata:
+      creation_time   : 2017-02-28T20:01:30.000000Z
+      handler_name    : Apple Alias Data Handler
+      encoder         : Apple ProRes 4444
+    Stream #0:1(eng): Data: none (tmcd / 0x64636D74), 0 kb/s (default)
+    Metadata:
+      creation_time   : 2017-02-28T20:01:30.000000Z
+      handler_name    : Apple Alias Data Handler
+      reel_name       : Unnamed
+      timecode        : 01:00:00:00
+At least one output file must be specified

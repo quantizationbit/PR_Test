@@ -257,6 +257,18 @@ git status
 popd
 
 
+#March 23rd
+proresDVSGen6PR2PR="PRORES_TO_PRORES_CLIPSTER_GEN6_6_2_0_2_032317.mov"
+proresDVSGen6TIF2PR="TIFF_TO_PRORES_CLIPSTER_GEN6_6_2_0_2_032317.mov"
+
+
+
+# March 1st
+proresDVS2423="DVSClipsterv6.2.0.2-Beta/LoneSurvivor_10frames_HDR_UHD_ProRes4444_24p_to_ProRes4444_2398p_Clipster_v6.2.0.2b_Test.mov"
+
+proresDVSTiff2PR="DVSClipsterv6.2.0.2-Beta/LoneSurvivor_10frames_HDR_UHD_TIFF_to_ProRes4444_Clipsterv6.2.0.1b_Test_24p.mov"
+
+
 # Jan 19 2017
 proresCT24to2398="LSJan19_2017/LS_HDR_UHD_rec2020_PQ_1000nit_ProRes4444_YUV_24p_to_Prores444_YUV__2398p_Cortex313_b11135.mov"
 proresCTtiff24to2398="LSJan19_2017/LS_HDR_UHD_rec2020_PQ_1000nit_TIFF_24p_to_ProRes4444_YUV_2398p_Cortex313_b11135.mov"
@@ -300,6 +312,30 @@ f834="LS_R3_3840x2160_24Fps_16bit_rec2020_PQ_FullRange_1000nit_Master.0260226.ti
 # $ ../yuvcompare.sh
 #
 #######
+
+# March 23, 2017
+prores=$proresDVSGen6PR2PR
+run="DVSGen6PR2PR"
+FRAMETEST
+
+prores=$proresDVSGen6TIF2PR
+run="DVSGen6TIF2PR"
+FRAMETEST
+
+exit
+
+
+
+# March 1 2017
+prores=$proresDVS2423
+run="DVS24to2398"
+FRAMETEST
+
+prores=$proresDVSTiff2PR
+run="DVStiff2PR"
+FRAMETEST
+
+exit
 
 # Jan 19 2017
 
